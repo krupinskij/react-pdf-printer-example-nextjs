@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+// import "/node_modules/react-pdf-printer/dist/style.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import { Lato, Mukta } from "next/font/google";
+
+const lato = Lato({
+  weight: ["400", "700"],
+  subsets: ["latin", "latin-ext"],
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
+// const mukta = Mukta({
+//   weight: ["500"],
+//   display: "swap",
+//   subsets: ["latin", "latin-ext"],
+// });
 
 export const metadata: Metadata = {
   title: "React PDF Printer",
@@ -23,10 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
-    </html>
+    <>
+      <html>
+        <body className={`${lato.className}`}>{children}</body>
+      </html>
+    </>
   );
 }
