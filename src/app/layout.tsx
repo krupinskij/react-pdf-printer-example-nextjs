@@ -4,6 +4,8 @@ import "./globals.css";
 
 import { Lato, Mukta } from "next/font/google";
 
+export const runtime = "edge";
+
 const lato = Lato({
   weight: ["400", "700"],
   subsets: ["latin", "latin-ext"],

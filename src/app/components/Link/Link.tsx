@@ -12,7 +12,7 @@ type Props = ComponentProps<typeof NextLink> & {
 export default function Link({ checkCurrent, className, ...props }: Props) {
   const pathname = usePathname();
 
-  const isCurrent = !checkCurrent || pathname === props.href;
+  const isCurrent = !!checkCurrent && pathname === props.href;
 
   return (
     <NextLink

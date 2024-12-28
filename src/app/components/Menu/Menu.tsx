@@ -1,15 +1,19 @@
 import Link from "../Link";
 import styles from "./Menu.module.css";
+import { query } from "./Menu.queries";
 
-export default function Menu() {
-  const data: any[] = [];
+export const runtime = "edge";
+
+export default async function Menu() {
+  const parks = await query();
+
   return (
     <ul className={styles.menu}>
-      {data.map(({ id: city }) => (
-        <li className={styles.item} key={city}>
-          <Link className={styles.link} href={`/city/${city}`} checkCurrent>
-            <img className={styles.img} src={`/assets/coa/city/${city}.svg`} />
-            {city}
+      {parks.map(({ key, name, logo }) => (
+        <li className={styles.item} key={key}>
+          <Link className={styles.link} href={`/park/${key}`} checkCurrent>
+            <img className={styles.img} src={logo} />
+            {name}
           </Link>
         </li>
       ))}

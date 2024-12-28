@@ -1,0 +1,30 @@
+.button {
+  padding: 0.5em 1em;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contained {
+  background: var(--btn-bg-contained);
+  border: var(--btn-border-contained);
+  color: var(--btn-color-contained);
+}
+
+.outlined {
+  background: var(--btn-bg-outlined);
+  border: var(--btn-border-outlined);
+  color: var(--btn-color-outlined);
+}
+
+.sm {
+  font-size: var(--font-sm);
+}
+
+.md {
+  font-size: var(--font-md);
+}
+
+.lg {
+  font-size: var(--font-lg);
+}

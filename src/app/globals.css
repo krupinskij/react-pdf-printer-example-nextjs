@@ -18,6 +18,7 @@
   --color-primary: #d4213d;
   --color-secondary: #c61f26;
   --color-border: #eee;
+  --color-shadow: #eee;
 
   --color-bg-primary: #fff;
   --color-bg-secondary: #eee;
@@ -25,9 +26,20 @@
   --color-text-primary: #000;
   --color-text-secondary: #818181;
 
+  --btn-bg-contained: linear-gradient(
+    12deg,
+    var(--color-secondary) 0%,
+    var(--color-primary) 100%
+  );
+  --btn-bg-outlined: #fff;
+  --btn-border-contained: none;
+  --btn-border-outlined: 1px solid var(--color-text-secondary);
+  --btn-color-contained: #fff;
+  --btn-color-outlined: var(--color-text-primary);
+
   --header-height: 120px;
   --footer-height: 50px;
-  --sidebar-width: 15vw;
+  --sidebar-width: 20vw;
 }
 
 body {

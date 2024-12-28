@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Link from "../components/Link";
 import Menu from "../components/Menu";
 
+export const runtime = "edge";
+
 export default function RootLayout({
   children,
 }: Readonly<{

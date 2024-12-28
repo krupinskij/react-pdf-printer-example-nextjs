@@ -1,0 +1,67 @@
+.spinner {
+  position: absolute;
+  visibility: hidden;
+  transform: translateX(-50%);
+  translate: 50% 60px;
+  width: 100%;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.thead {
+  text-align: left;
+}
+
+.theadcell {
+  display: block;
+  margin: 0.5em 20px;
+}
+
+.trow:nth-of-type(odd) {
+  background-color: var(--color-shadow);
+}
+
+.trowcell {
+  display: flex;
+  margin: 4px 0;
+  padding: 0 20px;
+}
+
+.trowcell.left > * {
+  margin-inline: 0 auto;
+}
+
+.trowcell.center > * {
+  margin-inline: auto;
+}
+
+.trowcell.right > * {
+  margin-inline: auto 0;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper.loading {
+  pointer-events: none;
+}
+
+.wrapper .spinner {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.wrapper.loading .spinner {
+  visibility: visible;
+  opacity: 1;
+}
+
+.wrapper .table {
+  transition: opacity 0.5s;
+}
+.wrapper.loading .table {
+  opacity: 0.2;
+}
