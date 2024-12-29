@@ -1,0 +1,33 @@
+.wrapper {
+  position: absolute;
+  right: 0;
+  z-index: 0;
+}
+
+.wrapper figure {
+  width: 100%;
+}
+
+.wrapper figcaption {
+  font-size: var(--font-md);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0px;
+  width: 300px;
+  background: linear-gradient(90deg, white 20%, transparent 100%);
+  z-index: 1;
+}
+
+.img {
+  height: 85vh;
+  translate: 0px -5vh;
+}
+
+.img.print {
+  width: 100%;
+  min-height: 620px;
+}

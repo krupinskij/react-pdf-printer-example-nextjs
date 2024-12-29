@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.table {
+  border-collapse: collapse;
+  border: 2px solid var(--color-border);
+}
+
+.caption {
+  caption-side: bottom;
+}
+
+.th {
+  font-weight: bold;
+  text-align: left;
+}
+
+.td {
+  text-align: right;
+}
+
+.th,
+.td {
+  border: 1px solid var(--color-border);
+  padding: 8px 10px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link.empty {
+  pointer-events: none;
+  color: var(--color-text-primary);
+}
+
+.link:hover {
+  text-decoration: underline;
+}

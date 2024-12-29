@@ -1,60 +1,81 @@
+import { Park } from "@/model";
 import { getRequestContext } from "@cloudflare/next-on-pages";
 import { z } from "zod";
 
-type Symbol = {
-  name: string;
-  url: string | null;
-};
-
-type Result = {
-  key: string;
-  name: string;
-  year: number;
-  area: number;
-  symbols: Symbol[];
-  logo: string;
-};
-
-const resultSchema = z.object({
+const resultParkSchema = z.object({
   key: z.string(),
   name: z.string(),
   year: z.number(),
   area: z.number(),
   logo: z.string(),
+  position_x: z.number(),
+  position_y: z.number(),
   symbol_name: z.string(),
   symbol_url: z.string().nullable(),
 });
 
-const resultsSchema = z.array(resultSchema);
+const resultParksSchema = z.array(resultParkSchema).min(1);
 
-export const query = async (): Promise<Result[]> => {
+const resultPictureSchema = z.object({
+  src: z.string(),
+  source: z.string(),
+  caption: z.string(),
+});
+
+const resultPicturesSchema = z
+  .array(resultPictureSchema)
+  .min(1)
+  .transform((pictures) => ({
+    background: pictures[0],
+    pictures: pictures.slice(1),
+  }));
+
+export const query = async (parkKey: string): Promise<Park> => {
   const { env } = getRequestContext();
 
-  const d1Result = await env.DB.prepare(
-    "SELECT p.*, s.name as symbol_name, s.url as symbol_url FROM park p LEFT JOIN symbol s ON p.key = s.park_key"
-  ).all();
-  const results = resultsSchema.parse(d1Result.results);
+  const d1ParksResult = await env.DB.prepare(
+    `
+    SELECT p.*, s.name as symbol_name, s.url as symbol_url, ps.x as position_x, ps.y as position_y FROM park p 
+    LEFT JOIN symbol s ON p.key = s.park_key 
+    LEFT JOIN position ps ON p.key = ps.park_key 
+    WHERE p.key = ?
+    ORDER BY s.id
+  `
+  )
+    .bind(parkKey)
+    .all();
+  const parks = resultParksSchema.parse(d1ParksResult.results);
+  const { key, name, year, area, logo, position_x, position_y } = parks[0];
 
-  const resultSet = results.reduce<Map<string, Result>>((acc, curr) => {
-    const result = acc.get(curr.key);
+  const d1PicturesResult = await env.DB.prepare(
+    `
+    SELECT * FROM picture p
+    WHERE p.park_key = ?
+    ORDER BY p.type
+  `
+  )
+    .bind(parkKey)
+    .all();
 
-    if (!result) {
-      acc.set(curr.key, {
-        key: curr.key,
-        name: curr.name,
-        year: curr.year,
-        area: curr.area,
-        symbols: [{ name: curr.symbol_name, url: curr.symbol_url }],
-        logo: curr.logo,
-      });
-    } else {
-      result.symbols.push({ name: curr.symbol_name, url: curr.symbol_url });
-    }
-
-    return acc;
-  }, new Map());
-
-  return Array.from(resultSet.values()).sort((a, b) =>
-    a.key.localeCompare(b.key)
+  const { background, pictures } = resultPicturesSchema.parse(
+    d1PicturesResult.results
   );
+
+  return {
+    key,
+    name,
+    year,
+    area,
+    logo,
+    position: {
+      x: position_x,
+      y: position_y,
+    },
+    symbols: parks.map(({ symbol_name, symbol_url }) => ({
+      name: symbol_name,
+      url: symbol_url,
+    })),
+    background,
+    pictures,
+  };
 };

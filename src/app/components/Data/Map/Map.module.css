@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+}
+
+.point {
+  display: block;
+  height: 10px;
+  width: 10px;
+  border-radius: 999999px;
+  background: var(--color-secondary);
+  border: 2px solid white;
+
+  position: absolute;
+  translate: -50% -50%;
+  left: calc(var(--x) * 1%);
+  top: calc(var(--y) * 1%);
+}
+
+.map {
+  vertical-align: middle;
+  width: 200px;
+  height: auto;
+}

@@ -1,0 +1,42 @@
+.cover {
+  height: clamp(600px, 65vh, 1000px);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover.print {
+  height: 600px;
+  margin-bottom: 80px;
+}
+
+.wrapper {
+  position: absolute;
+  bottom: 60px;
+  background-color: #ffffffdd;
+  padding-left: 60px;
+  z-index: 2;
+}
+
+.title {
+  font-size: var(--font-xxl);
+  font-weight: 700;
+  margin: 0;
+  padding: 0.4em 1.5em 0.1em 0;
+}
+
+.logo {
+  position: absolute;
+  top: 120px;
+  left: 60px;
+  z-index: 1;
+}
+
+.map.print span {
+  height: 12px;
+  width: 12px;
+}
+
+.map.print img {
+  width: 200px;
+}
