@@ -6,7 +6,7 @@ type Props = Park;
 
 const Cover = ({ name, logo, background }: Props) => {
   return (
-    <div className={styles.cover}>
+    <section className={styles.cover}>
       <div className={styles.wrapper}>
         <h2 className={styles.title}>{name}</h2>
       </div>
@@ -18,7 +18,7 @@ const Cover = ({ name, logo, background }: Props) => {
         width={300}
       />
       <Background {...background} />
-    </div>
+    </section>
   );
 };
 

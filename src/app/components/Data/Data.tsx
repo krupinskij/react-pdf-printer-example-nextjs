@@ -7,7 +7,7 @@ type Props = Park;
 
 const Data = ({ name, area, year, symbols, position }: Props) => {
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <table className={styles.table}>
         <tbody>
           <tr>
@@ -47,7 +47,7 @@ const Data = ({ name, area, year, symbols, position }: Props) => {
         </tbody>
       </table>
       <MapImage className={styles.map} position={position} />
-    </div>
+    </section>
   );
 };
 

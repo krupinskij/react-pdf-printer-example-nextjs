@@ -1,9 +1,8 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import { getRequestContext } from "@cloudflare/next-on-pages";
 import { query } from "./page.queries";
 import Cover from "@/app/components/Cover";
 import Data from "@/app/components/Data";
+import Pictures from "@/app/components/Pictures";
 
 export const runtime = "edge";
 
@@ -19,6 +18,7 @@ export default async function Park({ params }: Props) {
     <div className={styles.page}>
       <Cover {...result} key="cover" />
       <Data {...result} key="data" />
+      <Pictures {...result} key="pictures" />
     </div>
   );
 }
