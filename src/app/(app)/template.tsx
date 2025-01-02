@@ -1,10 +1,12 @@
-import Image from "next/image";
-import styles from "./template.module.css";
-import Navbar from "../components/Navbar";
-import Link from "../components/Link";
-import Menu from "../components/Menu";
+import Image from 'next/image';
 
-export const runtime = "edge";
+import Link from '@/components/Link';
+import Menu from '@/components/Menu';
+import Navbar from '@/components/Navbar';
+
+import styles from './template.module.css';
+
+export const runtime = 'edge';
 
 export default function RootLayout({
   children,
@@ -15,19 +17,9 @@ export default function RootLayout({
     <>
       <header className={styles.header}>
         <h1 className={styles.title}>
-          <Image
-            src="/assets/logo/logo_mid.png"
-            alt=""
-            width="50"
-            height="50"
-          />
+          <Image src="/assets/logo/logo_mid.png" alt="" width="50" height="50" />
           Parki Narodowe w Polsce
-          <Image
-            src="/assets/logo/logo_mid.png"
-            alt=""
-            width="50"
-            height="50"
-          />
+          <Image src="/assets/logo/logo_mid.png" alt="" width="50" height="50" />
         </h1>
         <Navbar />
       </header>
@@ -46,10 +38,7 @@ export default function RootLayout({
           </Link>
           &nbsp;| Parki Narodowe w Polsce
         </span>
-        <Link
-          className={styles.link}
-          href="https://www.flaticon.com/free-icons/poland"
-        >
+        <Link className={styles.link} href="https://www.flaticon.com/free-icons/poland">
           Ikona Polski autorstwa Agung Rama - Flaticon
         </Link>
       </footer>

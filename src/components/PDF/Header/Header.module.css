@@ -1,0 +1,8 @@
+.wrapper {
+  box-sizing: border-box;
+  height: 60px;
+  padding: 12px 20px;
+  color: white;
+  font-size: var(--font-lg);
+  background: linear-gradient(12deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
