@@ -1,8 +1,4 @@
-import styles from "./page.module.css";
-import Table, { Column } from "../components/Table";
-import Link from "../components/Link";
-import { PortalBtn, PortalDoc, StaticDoc } from "../components/PDF";
-import { query } from "../api/park/query";
+import { StaticDoc } from "../components/PDF";
 
 export default async function Page() {
   return <StaticDoc />;

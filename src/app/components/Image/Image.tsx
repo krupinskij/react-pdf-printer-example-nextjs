@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
-import { Position } from "./Image.model";
+import { useEffect } from "react";
 import styles from "./Image.module.css";
 import classNames from "classnames";
 import { usePrinter } from "react-pdf-printer";

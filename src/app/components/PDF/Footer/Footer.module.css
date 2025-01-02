@@ -10,7 +10,7 @@
   );
 }
 
-.pagination {
+.wrapper > span {
   display: block;
   margin: auto 20px 12px;
 }

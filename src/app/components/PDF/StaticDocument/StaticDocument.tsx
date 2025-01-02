@@ -1,20 +1,10 @@
 "use client";
 
 import { DocumentRef, Document } from "react-pdf-printer";
-
-import {
-  memo,
-  MouseEvent,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useRef } from "react";
 import Park from "../Park";
-import Button from "../../Button";
 import Header from "../Header";
 import Footer from "../Footer";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Screen from "../Screen";
 import useQuery from "@/app/api/park/useQuery";
 

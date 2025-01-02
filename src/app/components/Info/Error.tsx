@@ -17,7 +17,7 @@ const Error = ({ onClick, className }: Props) => {
         alt="error"
         aria-hidden="true"
       />
-      <span className={styles.text}>t('error')</span>
+      <span className={styles.text}>Błąd</span>
       <Button className={styles.button} onClick={() => onClick?.()}>
         t('refresh')
       </Button>

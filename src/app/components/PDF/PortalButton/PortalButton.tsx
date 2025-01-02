@@ -1,7 +1,7 @@
 "use client";
 
 import { usePrinter } from "react-pdf-printer";
-import { MouseEvent, useCallback, useState } from "react";
+import { MouseEvent, useCallback } from "react";
 import Button from "../../Button";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 

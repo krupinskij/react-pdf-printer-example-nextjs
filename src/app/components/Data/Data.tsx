@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 type Props = Park;
 
-const Data = ({ name, area, year, symbols, position }: Props) => {
+const Data = ({ area, year, symbols, position }: Props) => {
   return (
     <section className={styles.wrapper}>
       <table className={styles.table}>

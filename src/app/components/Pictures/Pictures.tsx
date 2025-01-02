@@ -1,5 +1,4 @@
 import { Park } from "@/model";
-import classNames from "classnames";
 import styles from "./Pictures.module.css";
 import Image from "../Image";
 

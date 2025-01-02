@@ -18,7 +18,7 @@ const Spinner = ({ text, className }: Props) => {
         width="100"
         height="100"
       />
-      {text && <span className={styles.text}>t('loading')...</span>}
+      {text && <span className={styles.text}>Ładowanie...</span>}
     </div>
   );
 };

@@ -11,7 +11,7 @@ const Screen = ({ isLoading, onRenderClick }: Props) => {
   const router = useRouter();
   return (
     <div className={styles.wrapper}>
-      <img src="/assets/logo/logo_lg.png" width="350" />
+      <img src="/assets/logo/logo_lg.png" alt="" width="350" />
       <div className={styles.buttons}>
         <Button
           loading={isLoading}

@@ -1,11 +1,7 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import Table, { Column } from "../components/Table";
-import Button from "../components/Button";
 import Link from "../components/Link";
-import { MouseEvent, useRef, useState } from "react";
 import { PortalBtn, PortalDoc } from "../components/PDF";
-import { usePrinter } from "react-pdf-printer";
 import { query } from "../api/park/query";
 
 export default async function Home() {

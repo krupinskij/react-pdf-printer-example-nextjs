@@ -3,14 +3,6 @@ import { getRequestContext } from "@cloudflare/next-on-pages";
 import { z } from "zod";
 import { query as parkQuery } from "./[park]/query";
 
-type Result = {
-  key: string;
-  name: string;
-  year: number;
-  area: number;
-  logo: string;
-};
-
 const resultKeySchema = z.object({
   key: z.string(),
 });

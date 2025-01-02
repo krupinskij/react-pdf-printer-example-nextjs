@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
 import styles from "./Map.module.css";
 import classNames from "classnames";
 
