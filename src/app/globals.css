@@ -1,3 +1,5 @@
+@import url("../../node_modules/react-pdf-printer/dist/style.css");
+
 :root {
   scroll-padding-top: 420px;
   scroll-padding-bottom: 80px;

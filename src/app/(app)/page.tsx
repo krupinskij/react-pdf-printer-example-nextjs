@@ -1,9 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { query } from "./page.queries";
 import Table, { Column } from "../components/Table";
 import Button from "../components/Button";
 import Link from "../components/Link";
+import { MouseEvent, useRef, useState } from "react";
+import { PortalBtn, PortalDoc } from "../components/PDF";
+import { usePrinter } from "react-pdf-printer";
+import { query } from "../api/park/query";
 
 export default async function Home() {
   const data = await query();
@@ -67,15 +70,18 @@ export default async function Home() {
     ),
     year: <span className={styles.cell}>{row.year}</span>,
     area: <span className={styles.cell}>{row.area}</span>,
-    print: <Button size="sm">Drukuj</Button>,
+    print: <PortalBtn park={row.key} />,
   }));
 
   return (
-    <Table
-      className={styles.table}
-      columns={columns}
-      dataSource={dataSource}
-      isLoading={false}
-    />
+    <>
+      <Table
+        className={styles.table}
+        columns={columns}
+        dataSource={dataSource}
+        isLoading={false}
+      />
+      <PortalDoc />
+    </>
   );
 }

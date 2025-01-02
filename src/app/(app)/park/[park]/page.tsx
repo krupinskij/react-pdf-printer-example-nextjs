@@ -1,5 +1,5 @@
+import { query } from "@/app/api/park/detail/[park]/query";
 import styles from "./page.module.css";
-import { query } from "./page.queries";
 import Cover from "@/app/components/Cover";
 import Data from "@/app/components/Data";
 import Pictures from "@/app/components/Pictures";
