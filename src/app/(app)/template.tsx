@@ -3,8 +3,6 @@ import styles from "./template.module.css";
 import Navbar from "../components/Navbar";
 import Link from "../components/Link";
 import Menu from "../components/Menu";
-import QueryProvider from "../providers/QueryProvider";
-import Providers from "../providers";
 
 export const runtime = "edge";
 
@@ -36,9 +34,7 @@ export default function RootLayout({
       <aside className={styles.sidebar}>
         <Menu />
       </aside>
-      <Providers>
-        <main className={styles.main}>{children}</main>
-      </Providers>
+      <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
         <span>
           <Link

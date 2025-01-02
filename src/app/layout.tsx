@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import "/node_modules/react-pdf-printer/dist/style.css";
 
-import { Lato, Mukta } from "next/font/google";
+import { Lato } from "next/font/google";
+import Providers from "./providers";
 
 export const runtime = "edge";
 
@@ -11,14 +11,8 @@ const lato = Lato({
   subsets: ["latin", "latin-ext"],
 });
 
-// const mukta = Mukta({
-//   weight: ["500"],
-//   display: "swap",
-//   subsets: ["latin", "latin-ext"],
-// });
-
 export const metadata: Metadata = {
-  title: "React PDF Printer",
+  title: "React PDF Printer | Parki Narodowe w Polsce",
 };
 
 export default function RootLayout({
@@ -29,7 +23,9 @@ export default function RootLayout({
   return (
     <>
       <html>
-        <body className={`${lato.className}`}>{children}</body>
+        <Providers>
+          <body className={`${lato.className}`}>{children}</body>
+        </Providers>
       </html>
     </>
   );

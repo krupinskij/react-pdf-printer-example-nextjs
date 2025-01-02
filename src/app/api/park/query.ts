@@ -1,14 +1,6 @@
 import { getRequestContext } from "@cloudflare/next-on-pages";
 import { z } from "zod";
 
-type Result = {
-  key: string;
-  name: string;
-  year: number;
-  area: number;
-  logo: string;
-};
-
 const resultSchema = z.object({
   key: z.string(),
   name: z.string(),
@@ -18,6 +10,8 @@ const resultSchema = z.object({
 });
 
 const resultsSchema = z.array(resultSchema);
+
+export type Result = z.infer<typeof resultSchema>;
 
 export const query = async (): Promise<Result[]> => {
   const { env } = getRequestContext();

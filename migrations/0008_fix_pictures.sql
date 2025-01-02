@@ -1,0 +1,2 @@
+-- Migration number: 0008 	 2025-01-02T17:03:37.326Z
+UPDATE picture SET src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Roztocza%C5%84ski_Park_Narodowy_Bukowa_G%C3%B3ra_RPN.jpg/320px-Roztocza%C5%84ski_Park_Narodowy_Bukowa_G%C3%B3ra_RPN.jpg' WHERE source = 'https://commons.wikimedia.org/wiki/File:Roztocza%C5%84ski_Park_Narodowy_Bukowa_G%C3%B3ra_RPN.jpg';
