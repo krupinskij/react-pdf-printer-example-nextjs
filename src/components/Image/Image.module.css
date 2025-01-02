@@ -1,0 +1,38 @@
+.figure {
+  margin: 0;
+  position: relative;
+  width: min-content;
+}
+
+.img {
+  background-color: var(--color-shadow);
+  vertical-align: bottom;
+  object-fit: cover;
+}
+
+.source {
+  color: black !important;
+}
+
+.source::before {
+  content: '[';
+}
+
+.source::after {
+  content: ']';
+}
+
+.caption {
+  position: absolute;
+  font-size: var(--font-sm);
+  background-color: #ffffffcc;
+  padding: 0.5em 1em;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 0.25em;
+}
+
+.caption.print {
+  font-size: var(--font-xs);
+}

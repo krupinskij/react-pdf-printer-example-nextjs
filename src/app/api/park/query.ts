@@ -1,5 +1,5 @@
-import { getRequestContext } from "@cloudflare/next-on-pages";
-import { z } from "zod";
+import { getRequestContext } from '@cloudflare/next-on-pages';
+import { z } from 'zod';
 
 const resultSchema = z.object({
   key: z.string(),

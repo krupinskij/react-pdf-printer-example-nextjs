@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Lato } from 'next/font/google';
 
-import { Lato } from "next/font/google";
-import Providers from "./providers";
+import Providers from '../providers';
+import './globals.css';
 
-export const runtime = "edge";
+export const runtime = 'edge';
 
 const lato = Lato({
-  weight: ["400", "700"],
-  subsets: ["latin", "latin-ext"],
+  weight: ['400', '700'],
+  subsets: ['latin', 'latin-ext'],
 });
 
 export const metadata: Metadata = {
-  title: "React PDF Printer | Parki Narodowe w Polsce",
+  title: 'React PDF Printer | Parki Narodowe w Polsce',
 };
 
 export default function RootLayout({

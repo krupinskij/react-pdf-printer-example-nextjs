@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  color: white;
+  background: linear-gradient(12deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
+
+.wrapper > span {
+  display: block;
+  margin: auto 20px 12px;
+}

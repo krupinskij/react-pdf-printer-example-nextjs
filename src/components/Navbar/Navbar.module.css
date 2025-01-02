@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  font-size: var(--font-md);
+  line-height: var(--lg-md);
+  padding: 0.5em;
+  background: linear-gradient(12deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+}
+
+.link {
+  color: #fff !important;
+}

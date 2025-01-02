@@ -1,10 +1,11 @@
-import { query } from "@/app/api/park/detail/[park]/query";
-import styles from "./page.module.css";
-import Cover from "@/app/components/Cover";
-import Data from "@/app/components/Data";
-import Pictures from "@/app/components/Pictures";
+import { query } from '@/app/api/park/[park]/query';
+import Cover from '@/components/Cover';
+import Data from '@/components/Data';
+import Pictures from '@/components/Pictures';
 
-export const runtime = "edge";
+import styles from './page.module.css';
+
+export const runtime = 'edge';
 
 type Props = {
   params: Promise<{ park: string }>;
