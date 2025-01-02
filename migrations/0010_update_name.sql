@@ -1,0 +1,2 @@
+-- Migration number: 0010 	 2025-01-02T22:12:09.957Z
+UPDATE picture SET caption = "Park Narodowy „Ujście Warty”" WHERE source = "https://commons.wikimedia.org/wiki/File:Ujscie_Warty_PN_09-2017_img04.jpg";
