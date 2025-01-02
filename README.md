@@ -11,4 +11,4 @@ Example usage of react-pdf-printer library - Parki Narodowe w Polsce
 
 ## Deployed app
 
-- [github pages](https://react-pdf-printer-example-nextjs.pages.dev/)
+- [cloudflare pages](https://react-pdf-printer-example-nextjs.pages.dev/)
