@@ -3,9 +3,7 @@ import { useQuery as useQ, UseQueryOptions } from '@tanstack/react-query';
 import { Park } from '@/model';
 
 const getData = async (parkKey: string): Promise<Park> => {
-  const response = await fetch(`/api/park/detail/${parkKey}`).then((response) =>
-    response.json<Park>()
-  );
+  const response = await fetch(`/api/park/${parkKey}`).then((response) => response.json<Park>());
 
   return response;
 };
