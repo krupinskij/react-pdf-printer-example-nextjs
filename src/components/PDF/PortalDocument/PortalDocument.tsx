@@ -23,7 +23,16 @@ const PortalDoc = () => {
 
   return (
     <>
-      <PortalDocument ref={documentRef} header={<Header />} footer={<Footer />}>
+      <PortalDocument
+        ref={documentRef}
+        header={<Header />}
+        footer={<Footer />}
+        configuration={{
+          pagination: {
+            format: 'Strona #p z #t',
+          },
+        }}
+      >
         {printKey && <Park parkKey={printKey} />}
       </PortalDocument>
     </>

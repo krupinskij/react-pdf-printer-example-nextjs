@@ -22,6 +22,11 @@ const PortalDoc = () => {
       screen={({ isRendering }) => (
         <Screen isLoading={isRendering} onRenderClick={() => documentRef.current?.render()} />
       )}
+      configuration={{
+        pagination: {
+          format: 'Strona #p z #t',
+        },
+      }}
       title="Parki Narodowe w Polsce"
       renderOnInit={false}
     >
