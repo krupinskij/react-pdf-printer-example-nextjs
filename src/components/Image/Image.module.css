@@ -5,7 +5,6 @@
 }
 
 .img {
-  background-color: var(--color-shadow);
   vertical-align: bottom;
   object-fit: cover;
 }

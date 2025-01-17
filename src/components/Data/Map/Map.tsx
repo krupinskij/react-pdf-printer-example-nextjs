@@ -2,6 +2,8 @@
 
 import classNames from 'classnames';
 
+import Image from '@/components/Image';
+
 import styles from './Map.module.css';
 
 type Props = {
@@ -13,7 +15,7 @@ const MapImage = ({ position, className }: Props) => {
   return (
     <div className={classNames(styles.wrapper, className)} aria-hidden="true">
       <span className={styles.point} style={{ ['--x']: position.x, ['--y']: position.y } as any} />
-      <img className={styles.map} src="/assets/icon/poland.svg" alt="Mapa Polski" />
+      <Image className={styles.map} src="/assets/icon/poland.svg" caption="Mapa Polski" />
     </div>
   );
 };

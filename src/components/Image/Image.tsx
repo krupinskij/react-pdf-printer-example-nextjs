@@ -9,7 +9,7 @@ import styles from './Image.module.css';
 type Props = {
   src: string;
   caption: string;
-  source: string;
+  source?: string;
   className?: string;
 };
 
@@ -29,12 +29,14 @@ const Image = ({ src, caption, source, className }: Props) => {
         onLoad={run}
         onError={run}
       />
-      <figcaption className={styles.caption}>
-        {caption} |{' '}
-        <a className={styles.source} href={source} target="_blank">
-          Źródło
-        </a>
-      </figcaption>
+      {source && (
+        <figcaption className={styles.caption}>
+          {caption} |{' '}
+          <a className={styles.source} href={source} target="_blank">
+            Źródło
+          </a>
+        </figcaption>
+      )}
     </figure>
   );
 };
